@@ -1,0 +1,44 @@
+cabal-version:      3.0
+name:               ttfpi-hs
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             lambdajon
+maintainer:         lambdajon42@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  MyLib
+    build-depends:    
+        base
+        , text
+        , containers
+    hs-source-dirs:   src
+    default-language: GHC2024
+
+executable ttfpi-hs
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:
+        base,
+        ttfpi-hs
+    hs-source-dirs:   app
+    default-language: GHC2024
+
+test-suite ttfpi-hs-test
+    -- Import common warning flags.
+    import:           warnings
+
+    -- Base language which the package is written in.
+    default-language: GHC2024
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:
+        base,
+        ttfpi-hs
