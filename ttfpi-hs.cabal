@@ -15,11 +15,13 @@ library
   import:             warnings
   exposed-modules:
     FreeVariable
+    Lambda
     MyLib
 
   build-depends:
     , base
     , containers
+    , megaparsec
     , text
 
   hs-source-dirs:     src
